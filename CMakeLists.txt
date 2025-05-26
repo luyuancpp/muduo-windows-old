@@ -82,8 +82,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 endif (MSVC)
 
-
-
+include_directories(contrib/boost/boost)
+include_directories(contrib/windows/include)
 include_directories(boost)
 include_directories(gtest/googletest/include)
 include_directories(gtest/googlemock/include)

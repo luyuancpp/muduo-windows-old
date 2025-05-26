@@ -24,7 +24,7 @@ add_test(NAME buffer_unittest COMMAND buffer_unittest)
 add_executable(buffer_cpp11_unittest Buffer_unittest.cc)
 target_link_libraries(buffer_cpp11_unittest muduo_net_cpp11 boost_unit_test_framework)
 if(UNIX)
- set_target_properties(buffer_cpp11_unittest PROPERTIES COMPILE_FLAGS "--std=c++11")
+ set_target_properties(buffer_cpp11_unittest PROPERTIES COMPILE_FLAGS "--std=c++20")
 endif()
 
 add_test(NAME buffer_cpp11_unittest COMMAND buffer_cpp11_unittest)

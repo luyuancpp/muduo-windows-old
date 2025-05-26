@@ -190,6 +190,10 @@ void TimerQueue::handleRead()
   // safe to callback outside critical section
   for (const Entry& it : expired)
   {
+      if (cancelingTimers_.contains(ActiveTimer{ it.second, it.second->sequence() }))
+      {
+          continue;
+      }
     it.second->run();
   }
   callingExpiredTimers_ = false;
